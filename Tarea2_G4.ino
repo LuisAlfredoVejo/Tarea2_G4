@@ -17,9 +17,12 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  
   valorPot = analogRead(pot);
   digitalWrite(12,LOW);
   digitalWrite(13,LOW);
+  delay(50);
+  
   if(digitalRead(2) == HIGH){
     digitalWrite(13,LOW);
     digitalWrite(12,HIGH);
