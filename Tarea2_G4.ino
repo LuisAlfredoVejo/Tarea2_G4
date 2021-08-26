@@ -1,10 +1,11 @@
 int pot = A0;
 int valorPot;
-int motorPin = 9;
+int motor =11;
 
 void setup() {
   // put your setup code here, to run once:
-  //pinMode(motorPin, OUTPUT);
+  pinMode(motor, OUTPUT);
+  pinMode(pot, INPUT);
   pinMode(2,INPUT);
   pinMode(3,INPUT);
   pinMode(12,OUTPUT);
@@ -18,7 +19,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   
-  valorPot = analogRead(pot);
+  vel();
   digitalWrite(12,LOW);
   digitalWrite(13,LOW);
   delay(50);
@@ -40,6 +41,13 @@ void loop() {
   }
   */
 }
+
+void vel(){
+  valorPot = analogRead(pot);
+  analogWrite(motor, valorPot);
+}
+
+
 
 
   
